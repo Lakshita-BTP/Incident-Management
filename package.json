@@ -1,7 +1,6 @@
 {
   "name": "incident-management",
   "version": "1.0.0",
-  "type": "module",
   "dependencies": {
     "@sap/cds": "^10"
   },
