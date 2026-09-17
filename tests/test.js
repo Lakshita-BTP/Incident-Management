@@ -1,8 +1,16 @@
-const cds = require('@sap/cds')
-const test = cds.test(__dirname + '/..', '--with-mocks')
-const { GET, POST, DELETE, PATCH, expect } = test
+const cds = require('@sap/cds/lib')
+const test = cds.test(__dirname + '../../', '--with-mocks')
+const { GET, POST, DELETE, PATCH, expect, defaults } = test
 
-test.defaults.auth = { username: 'alice', password: '' }
+defaults.auth = {
+  username: 'alice',
+  password: ''
+}
+
+jest.setTimeout(11111)
+
+const bob = { auth: { username: 'bob', password: '' } }
+
 
 describe('Test The GET Endpoints', () => {
   it('Should check Processor Service', async () => {
